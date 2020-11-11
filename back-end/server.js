@@ -31,11 +31,6 @@ mongoose.connection.once('open', function(){
 
     app.delete("/remove", function(request, response) {    
         
-        var removeItem = new Items({
-            item: request.body.item,
-            _id: request.body._id
-        }); 
-
         Items.deleteOne({_id: request.body._id}).exec(function (err, doc) {
             response.status(200);
             response.send(JSON.stringify(doc));
