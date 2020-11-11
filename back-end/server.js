@@ -30,7 +30,7 @@ mongoose.connection.once('open', function(){
     })
 
     app.delete("/remove", function(request, response) {    
-
+        
         var removeItem = new Items({
             item: request.body.item,
             _id: request.body._id
@@ -40,12 +40,6 @@ mongoose.connection.once('open', function(){
             response.status(200);
             response.send(JSON.stringify(doc));
         })       
-
-        /*
-        Items.deleteOne({item: request.body.item}).exec(function (err, doc) {
-            response.status(200);
-            response.send(JSON.stringify(doc));
-        })*/
     })
 
     app.listen(8080, function () {
