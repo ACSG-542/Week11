@@ -1,0 +1,14 @@
+<input class="todo-input"  [(ngModel)]="newItem">
+<button class="todo-input"  (click)="saveItem()">Save</button>
+
+<!--<h3>Items!</h3>-->
+
+  <ul>
+  	<div class="todo-item">
+  		<div class="todo-item-left">
+  			<div class="todo-item-label">
+  				<li *ngFor="let todo of items"> <h4>{{ todo.item }} <button class="remove-item" (click)="deleteItem(todo.item, todo._id)">&times;</button></h4></li>
+  			</div>
+  		</div>
+  	</div>
+  </ul>
